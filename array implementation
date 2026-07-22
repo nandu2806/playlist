@@ -1,0 +1,58 @@
+class Stack:
+    def __init__(self):
+        self.Stack=[]
+    def push(self,item):
+        self.Stack.append(item)
+        print(f"{item}pushed to stack")
+    def pop(self):
+        if self.is_empty():
+            return "stack underflow"
+        return self.Stack.pop()
+    def peek(self):
+        if self.is_empty():
+            return "stack is empty"
+        return self.stack[-1]
+    def is_empty(self):
+        return len(self.Stack)==0
+    def size(self):
+        return len(self.stack)
+    def display(self):
+        print("stack element:",self.Stack)
+        
+ob=Stack()
+
+while True:
+    print("\n STACK USING LINKED LIST")
+    print("1.pushing on a book into a stack") 
+    print("2.poping on a book on a stack")
+    print("3.display that all book in stack")
+    print("4.exit")
+
+    choice = int(input("Enter the choice:"))
+
+    if choice == 1:
+        a=input("Enter book name to push")
+        ob.push(a)
+        
+
+
+    elif choice == 2:
+        b=ob.pop()
+        print(b)
+
+
+    elif choice == 3:
+        f=ob.display()
+        print(f)
+
+    elif choice == 4:
+        print("Exit the program")
+        break
+
+
+    else:
+        print("Invalid inpur")    
+
+
+
+        
