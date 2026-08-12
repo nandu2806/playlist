@@ -1,0 +1,41 @@
+class node:
+    def __init__(self,data):
+        self.data=data
+        self.left=None
+        self.right=None
+root=node("man")
+root.left=node("women")
+root.right=node("child")
+root.left.left=node("son")
+root.left.right=node("daughter")
+
+
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.data,end=" ")
+        inorder(root.right)
+
+
+def preorder(root):
+    if root:
+        print(root.data,end=" ")
+        preorder(root.left)
+        preorder(root.right)
+
+
+def postorder(root):
+    if root:
+        postorder(root.left) 
+        postorder(root.right)
+        print(root.data,end=" ")
+
+print("inorder")
+inorder(root)
+
+print("\npreorder")
+preorder(root)
+
+print("\npostorder")
+postorder(root)
+
